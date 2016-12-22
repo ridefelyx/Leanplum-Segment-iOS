@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LeanplumSegment"
-  s.version          = "1.0.3"
+  s.version          = "{{LP_SEG_VERSION}}"
   s.summary          = "Leanplum SDK integration for the Segment iOS SDK."
   s.description      = "Mobile A/B testing, personalization & analytics in one powerful platform."
   s.homepage         = 'https://www.leanplum.com'
@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
 
   s.source_files     = 'Pod/Classes/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'Analytics', '~> 3'
   s.dependency 'Leanplum-iOS-SDK', '~> 1'
 
