@@ -90,18 +90,31 @@ SEGLeanplumIntegration* integration;
            properties:@{ @"email" : @"foo@bar.com" }
               context:nil
          integrations:nil];
+    
+    SEGTrackPayload* payloadWithValue = [[SEGTrackPayload alloc]
+                                initWithEvent:@"testEvent"
+                                properties:@{ @"email" : @"foo@bar.com", @"value": @5 }
+                                context:nil
+                                integrations:nil];
 
     id mockLeanplum = OCMClassMock([Leanplum class]);
+
     SEL selector = @selector(track:withParameters:);
+    SEL trackValueSelector = @selector(track:withValue:andParameters:);
+    
     XCTAssertTrue([[Leanplum class] respondsToSelector:selector]);
+    XCTAssertTrue([[Leanplum class] respondsToSelector:trackValueSelector]);
+    
     OCMStub(ClassMethod([mockLeanplum methodForSelector:selector]));
+    OCMStub(ClassMethod([mockLeanplum methodForSelector:trackValueSelector]));
 
     [integration track:payload];
+    [integration track:payloadWithValue];
 
-    [[NSRunLoop mainRunLoop] runUntilDate:
-                                 [NSDate dateWithTimeIntervalSinceNow:0.01]];
-    OCMVerify([mockLeanplum track:payload.event
-                   withParameters:payload.properties]);
+    [[NSRunLoop mainRunLoop] runUntilDate: [NSDate dateWithTimeIntervalSinceNow:0.01]];
+
+    OCMVerify([mockLeanplum track:payload.event withParameters:payload.properties]);
+    OCMVerify([mockLeanplum track:payloadWithValue.event withValue:5 andParameters:payloadWithValue.properties]);
 }
 
 - (void)testScreen
