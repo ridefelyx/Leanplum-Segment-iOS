@@ -1,9 +1,9 @@
 PODS:
   - Analytics (3.5.5)
-  - Leanplum-iOS-SDK (1.4.2)
-  - LeanplumSegment (1.0.3):
+  - Leanplum-iOS-SDK (2.0.1)
+  - LeanplumSegment (1.1.0):
     - Analytics (~> 3)
-    - Leanplum-iOS-SDK (~> 1)
+    - Leanplum-iOS-SDK (~> 2)
   - OCMock (3.2.2)
 
 DEPENDENCIES:
@@ -12,14 +12,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   LeanplumSegment:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
   Analytics: af1da699765b652112483847ea73ad7c6adbd0e9
-  Leanplum-iOS-SDK: 4e280bd7d85850dedcd8870c0014f3a15994fcce
-  LeanplumSegment: 76352fe86f894c1397a4b92fc96bd1a53df120c4
+  Leanplum-iOS-SDK: 1f3a5ef5db032584c11cbd2c36a8b5df1b343fee
+  LeanplumSegment: e10c413471a735c24bba9624565502b9b5ea1903
   OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
 
 PODFILE CHECKSUM: 5f7952b2d30546293057e49ff96d1614607247fe
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
