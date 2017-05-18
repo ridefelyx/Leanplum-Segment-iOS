@@ -69,16 +69,15 @@ pod 'Analytics', '3.0.1'
 pod 'Leanplum-iOS-SDK', '1.2.23'
 ```
 ## Deploy to CocoaPods
-1. Update Version in `LeanplumSegment.podspec`
-  
-  ```ruby
-  s.version          = "1.1.1-SNAPSHOT"
-  ```
-2. Commit & Push Latest Changes, then mark latest release by tag:
+1. Checkout a new release branch from develop:
   
   ```bash
-  git tag 1.0.0
-  git push --tags
+  git flow release start "NEW_VERSION"
+  ```
+2. Run the bump version script:
+  
+  ```bash
+  ./bump_version.sh OLD_VERSION NEW_VERSION
   ```
 3. Validate Library:
   
@@ -90,6 +89,11 @@ pod 'Leanplum-iOS-SDK', '1.2.23'
   
   ```bash
   pod trunk push --use-libraries
+  ```
+5. Finish release:
+  
+  ```bash
+  git flow release finish "NEW_VERSION"
   ```
 
 ## License
