@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LeanplumSegment"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1-SNAPSHOT"
   s.summary          = "Leanplum SDK integration for the Segment iOS SDK."
   s.description      = "Mobile A/B testing, personalization & analytics in one powerful platform."
   s.homepage         = 'https://www.leanplum.com'
