@@ -24,6 +24,6 @@ Pod::Spec.new do |s|
   s.source_files     = 'Pod/Classes/**/*'
 
   s.dependency 'Analytics', '~> 3'
-  s.dependency 'Leanplum-iOS-SDK', '~> 1'
+  s.dependency 'Leanplum-iOS-SDK', '~> 2'
 
 end
