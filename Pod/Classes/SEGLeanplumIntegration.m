@@ -49,7 +49,12 @@
 - (void)identify:(SEGIdentifyPayload *)payload
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [Leanplum setUserId:payload.userId withUserAttributes:payload.traits];
+        @try {
+            [Leanplum setUserId:payload.userId withUserAttributes:payload.traits];
+        } @catch (NSException *exception) {
+            NSLog(@"Leanplum Integration Error: Unable to set userId with userAttributes."
+                  @"Error: %@", exception);
+        }
     });
 }
 
@@ -58,20 +63,25 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         // Since Leanplum has value field that can be associated with any event,
         // we have to extract that field from Segment and send it with our event as a value.
-        if ([payload.properties objectForKey:@"value"])
-        {
-            id valueObject = [payload.properties objectForKey:@"value"];
-            if ([valueObject isKindOfClass:[NSNumber class]])
+        @try {
+            if ([payload.properties objectForKey:@"value"])
             {
-                double value = [valueObject doubleValue];
-                [Leanplum track:payload.event withValue:value andParameters:payload.properties];
+                id valueObject = [payload.properties objectForKey:@"value"];
+                if ([valueObject isKindOfClass:[NSNumber class]])
+                {
+                    double value = [valueObject doubleValue];
+                    [Leanplum track:payload.event withValue:value andParameters:payload.properties];
+                }
+                else {
+                    [Leanplum track:payload.event withParameters:payload.properties];
+                }
             }
             else {
                 [Leanplum track:payload.event withParameters:payload.properties];
             }
-        }
-        else {
-            [Leanplum track:payload.event withParameters:payload.properties];
+        } @catch (NSException *exception) {
+            NSLog(@"Leanplum Integration Error: Unable to track event. %@",
+                  exception);
         }
     });
 }
@@ -79,7 +89,12 @@
 - (void)screen:(SEGScreenPayload *)payload
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [Leanplum advanceTo:payload.name withParameters:payload.properties];
+        @try {
+            [Leanplum advanceTo:payload.name withParameters:payload.properties];
+        } @catch (NSException *exception) {
+            NSLog(@"Leanplum Integration Error: Unable to screen event. %@",
+                  exception);
+        }
     });
 }
 
