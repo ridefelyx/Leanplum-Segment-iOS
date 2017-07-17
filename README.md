@@ -90,6 +90,9 @@ pod 'Leanplum-iOS-SDK', '1.2.23'
   
   ```bash
   git flow release finish "NEW_VERSION"
+  git push
+  git checkout master
+  git push
   ```
 6. Publish to CocoaPods (Caution, once published cannot be undone!)
   
