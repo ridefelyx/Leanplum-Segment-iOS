@@ -41,7 +41,14 @@
             [Leanplum setAppId:appId withProductionKey:token];
         }
 
-        [Leanplum start];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @try {
+                [Leanplum start];
+            } @catch (NSException *exception) {
+                NSLog(@"Leanplum Integration Error: Unable to start."
+                      @"Error: %@", exception);
+            }
+        });
     }
     return self;
 }
