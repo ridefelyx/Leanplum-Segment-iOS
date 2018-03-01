@@ -5,7 +5,7 @@ Leanplum SDK integration for the Segment iOS SDK.
 To install the Leanplum Segment integration, simply add this line to your
 [CocoaPods](https://cocoapods.org) Podfile:
 ```ruby
-pod 'LeanplumSegment', '~> 1.1.2'
+pod 'LeanplumSegment', '~> 1.1.3'
 ```
 That's it! Now you can use the Segment SDK and also the [advanced features](https://www.leanplum.com/docs#/docs) of the Leanplum SDK.
 
@@ -90,6 +90,9 @@ pod 'Leanplum-iOS-SDK', '1.2.23'
   
   ```bash
   git flow release finish "NEW_VERSION"
+  git push
+  git checkout master
+  git push
   ```
 6. Publish to CocoaPods (Caution, once published cannot be undone!)
   
