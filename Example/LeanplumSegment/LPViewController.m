@@ -6,7 +6,7 @@
 //
 
 #import "LPViewController.h"
-#import <Leanplum/Leanplum.h>
+#import "Leanplum.h"
 #import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 
 @interface LPViewController ()

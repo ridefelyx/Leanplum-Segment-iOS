@@ -5,7 +5,7 @@
 //  Copyright (c) 2016 Leanplum. All rights reserved.
 //
 
-#import <Leanplum/Leanplum.h>
+#import "Leanplum.h"
 #import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 #import <OCMock/OCMock.h>
 
@@ -67,8 +67,8 @@ SEGLeanplumIntegration* integration;
         initWithUserId:@"userId"
            anonymousId:@"anonymousId"
                 traits:@{ @"email" : @"foo@bar.com" }
-               context:nil
-          integrations:nil];
+                                   context:@{}
+                                   integrations:@{}];
 
     id mockLeanplum = OCMClassMock([Leanplum class]);
     SEL selector = @selector(setUserId:withUserAttributes:);
@@ -88,14 +88,14 @@ SEGLeanplumIntegration* integration;
     SEGTrackPayload* payload = [[SEGTrackPayload alloc]
         initWithEvent:@"testEvent"
            properties:@{ @"email" : @"foo@bar.com" }
-              context:nil
-         integrations:nil];
+                                context:@{}
+                                integrations:@{}];
     
     SEGTrackPayload* payloadWithValue = [[SEGTrackPayload alloc]
                                 initWithEvent:@"testEvent"
                                 properties:@{ @"email" : @"foo@bar.com", @"value": @5 }
-                                context:nil
-                                integrations:nil];
+                                         context:@{}
+                                         integrations:@{}];
 
     id mockLeanplum = OCMClassMock([Leanplum class]);
 
@@ -120,10 +120,11 @@ SEGLeanplumIntegration* integration;
 - (void)testScreen
 {
     SEGScreenPayload* payload = [[SEGScreenPayload alloc]
-        initWithName:@"screen"
-          properties:@{ @"some" : @"info" }
-             context:nil
-        integrations:nil];
+                                 initWithName:@"screen"
+                                 category:@""
+                                 properties:@{ @"some" : @"info" }
+                                 context:@{}
+                                 integrations:@{}];
 
     id mockLeanplum = OCMClassMock([Leanplum class]);
     SEL selector = @selector(track:withParameters:);
