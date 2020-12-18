@@ -1,8 +1,8 @@
 //
 //  SEGLeanplumIntegration.m
-//  Leanplum Segment iOS Integration Version 1.0.1
+//  Leanplum Segment iOS Integration
 //
-//  Copyright (c) 2016 Leanplum. All rights reserved.
+//  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
 #import "SEGLeanplumIntegration.h"
@@ -103,6 +103,13 @@
                   exception);
         }
     });
+}
+
+- (void)flush
+{
+    // Not Implemented.
+    // Segment batching works based on the number of events and can send each event separately.
+    // Leanplum batching based on time and is tight to billing.
 }
 
 @end
