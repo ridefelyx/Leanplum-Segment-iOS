@@ -1,18 +1,42 @@
 //
 //  LPAppDelegate.m
-//  Leanplum Segment iOS Integration Version 1.0.1
+//  Leanplum Segment iOS Integration
 //
-//  Copyright (c) 2016 Leanplum. All rights reserved.
+//  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
 #import "LPAppDelegate.h"
+#import "Leanplum.h"
+#import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 
 @implementation LPAppDelegate
+
+NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    SEGAnalyticsConfiguration *config =
+        [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
+    
+    [config use:[SEGLeanplumIntegrationFactory instance]];
+    [SEGAnalytics setupWithConfiguration:config];
+
+    [Leanplum onStartResponse:^(BOOL success) {
+        NSLog(@"Leanplum started successfully: %@", success ? @"Yes" : @"No");
+    }];
+    
+    [[SEGAnalytics sharedAnalytics] identify:@"f4ca124297"
+                                      traits:@{
+                                          @"name" : @"First Last",
+                                          @"email" : @"first@last.com"
+                                      }];
+    [[SEGAnalytics sharedAnalytics] track:@"Signed up"
+                               properties:@{
+                                   @"plan" : @"Enterprise"
+                               }];
+    
     return YES;
 }
 

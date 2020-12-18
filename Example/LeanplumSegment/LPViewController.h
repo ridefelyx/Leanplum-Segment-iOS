@@ -1,8 +1,8 @@
 //
 //  LPViewController.h
-//  Leanplum Segment iOS Integration Version 1.0.1
+//  Leanplum Segment iOS Integration
 //
-//  Copyright (c) 2016 Leanplum. All rights reserved.
+//  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
 @import UIKit;

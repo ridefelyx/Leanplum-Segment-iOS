@@ -1,12 +1,11 @@
 //
 //  LPViewController.m
-//  Leanplum Segment iOS Integration Version 1.0.1
+//  Leanplum Segment iOS Integration
 //
-//  Copyright (c) 2016 Leanplum. All rights reserved.
+//  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
 #import "LPViewController.h"
-#import "Leanplum.h"
 #import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 
 @interface LPViewController ()
@@ -15,26 +14,10 @@
 
 @implementation LPViewController
 
-NSString *const SEGMENT_WRITE_KEY = @"<KEY>";
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    SEGAnalyticsConfiguration *config =
-        [SEGAnalyticsConfiguration configurationWithWriteKey:SEGMENT_WRITE_KEY];
-    [config use:[SEGLeanplumIntegrationFactory instance]];
-    [SEGAnalytics setupWithConfiguration:config];
-
-    [[SEGAnalytics sharedAnalytics] identify:@"f4ca124297"
-                                      traits:@{
-                                          @"name" : @"First Last",
-                                          @"email" : @"first@last.com"
-                                      }];
-    [[SEGAnalytics sharedAnalytics] track:@"Signed up"
-                               properties:@{
-                                   @"plan" : @"Enterprise"
-                               }];
+    
     [[SEGAnalytics sharedAnalytics] screen:@"Start"];
 }
 
