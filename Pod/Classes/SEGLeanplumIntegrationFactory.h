@@ -5,7 +5,7 @@
 //  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
-#import <Analytics/SEGIntegrationFactory.h>
+#import <Segment/SEGIntegrationFactory.h>
 #import "SEGLeanplumIntegration.h"
 #import <Foundation/Foundation.h>
 
