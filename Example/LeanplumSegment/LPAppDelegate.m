@@ -6,7 +6,7 @@
 //
 
 #import "LPAppDelegate.h"
-#import "Leanplum.h"
+#import <Leanplum/Leanplum.h>
 #import <LeanplumSegment/SEGLeanplumIntegrationFactory.h>
 
 @implementation LPAppDelegate

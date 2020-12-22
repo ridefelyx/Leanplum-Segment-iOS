@@ -1,13 +1,13 @@
 //
 //  SEGLeanplumIntegration.h
-//  Leanplum Segment iOS Integration Version 1.1.4-beta1
+//  Leanplum Segment iOS Integration Version 1.1.4-beta2
 //
 //  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
-#import <Analytics/SEGAnalytics.h>
+#import <Segment/SEGAnalytics.h>
 #import <Foundation/Foundation.h>
-#import "Leanplum.h"
+#import <Leanplum/Leanplum.h>
 
 @interface SEGLeanplumIntegration : NSObject <SEGIntegration>
 
