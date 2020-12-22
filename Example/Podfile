@@ -1,4 +1,5 @@
 target 'LeanplumSegment_Example' do
+  use_frameworks!
     pod 'LeanplumSegment', :path => '../'
   target 'LeanplumSegment_Tests' do
     pod 'LeanplumSegment', :path => '../'
