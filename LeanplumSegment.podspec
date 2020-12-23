@@ -29,5 +29,4 @@ Pod::Spec.new do |s|
   
   s.module_name = 'LeanplumSegment'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
-  s.static_framework = true
 end
