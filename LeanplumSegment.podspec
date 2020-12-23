@@ -26,5 +26,7 @@ Pod::Spec.new do |s|
 
   s.dependency 'Analytics', '~> 4'
   s.dependency 'Leanplum-iOS-SDK', '~> 3'
-
+  
+  s.module_name = 'LeanplumSegment'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end
