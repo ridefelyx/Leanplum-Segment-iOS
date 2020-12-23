@@ -5,10 +5,9 @@
 //  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
-#import <Segment/SEGAnalytics.h>
 #import "SEGLeanplumIntegration.h"
-#import <Foundation/Foundation.h>
 
+NS_SWIFT_NAME(SegmentLeanplumIntegrationFactory)
 @interface SEGLeanplumIntegrationFactory : NSObject <SEGIntegrationFactory>
 
 extern NSString *LPLeanplumSegmentKey;
