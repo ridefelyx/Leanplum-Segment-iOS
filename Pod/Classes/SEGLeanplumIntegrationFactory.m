@@ -2,11 +2,10 @@
 //  SEGLeanplumIntegrationFactory.m
 //  Leanplum Segment iOS Integration
 //
-//  Copyright (c) 2016 Leanplum. All rights reserved.
+//  Copyright (c) 2020 Leanplum. All rights reserved.
 //
 
 #import "SEGLeanplumIntegrationFactory.h"
-#import <Foundation/Foundation.h>
 
 @implementation SEGLeanplumIntegrationFactory
 
