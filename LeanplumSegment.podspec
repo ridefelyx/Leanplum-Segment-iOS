@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Commercial', :text => 'See https://www.leanplum.com/tos' }
   s.author           = { 'Leanplum' => 'support@leanplum.com' }
   s.social_media_url = 'https://twitter.com/leanplum'
-  s.platform         = :ios, '9.0'
+  s.platform         = :ios, '10.0'
   s.requires_arc     = true
 
   s.source           = { :git => "https://github.com/Leanplum/Leanplum-Segment-iOS.git", :tag => s.version.to_s }
@@ -26,5 +26,8 @@ Pod::Spec.new do |s|
 
   s.dependency 'Analytics', '~> 4'
   s.dependency 'Leanplum-iOS-SDK', '~> 3'
+  
+  s.module_name = 'LeanplumSegment'
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 
 end
