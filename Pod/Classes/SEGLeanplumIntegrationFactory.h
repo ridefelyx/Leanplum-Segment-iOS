@@ -1,6 +1,6 @@
 //
 //  SEGLeanplumIntegrationFactory.h
-//  Leanplum Segment iOS Integration Version 1.1.4-beta9
+//  Leanplum Segment iOS Integration Version 1.1.4-beta10
 //
 //  Copyright (c) 2020 Leanplum. All rights reserved.
 //
