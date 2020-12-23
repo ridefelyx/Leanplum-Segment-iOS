@@ -2,4 +2,4 @@
 
 source ~/.rvm/scripts/rvm
 rvm use default
-pod trunk push LeanplumSegment.podspec --use-libraries --allow-warnings
+pod trunk push LeanplumSegment.podspec --allow-warnings
