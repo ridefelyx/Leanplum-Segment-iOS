@@ -69,36 +69,15 @@ pod 'Analytics', '3.0.1'
 pod 'Leanplum-iOS-SDK', '1.2.23'
 ```
 ## Deploy to CocoaPods
-1. Checkout a new release branch from develop:
-  
-  ```bash
-  git flow release start "NEW_VERSION"
-  ```
-2. Run the bump version script:
-  
-  ```bash
-  ./bump_version.sh OLD_VERSION NEW_VERSION
-  ```
-3. Run the unit tests within the Example project.
-4. Validate Library:
-  
-  ```bash
-  pod lib lint --use-libraries --verbose
-  pod spec lint --use-libraries --verbose
-  ```
-5. Finish release:
-  
-  ```bash
-  git flow release finish "NEW_VERSION"
-  git push
-  git checkout master
-  git push
-  ```
-6. Publish to CocoaPods (Caution, once published cannot be undone!)
-  
-  ```bash
-  pod trunk push --use-libraries
-  ```
+1. Update the version in the sdk-version.txt file
+2. Run `make deploy`. 
+
+It will *update the version* in the header files, *commit*, *tag* and try to *publish* to CocoaPods.
+
+*Publish to CocoaPods (Caution, once published cannot be undone!)*
+
+The publishing is done automatically when `make deploy` is run, using `pod trunk push LeanplumSegment.podspec --allow-warnings` called in `push.sh`.
+You need admin trunk session in order to publish. New session is started using `$ pod trunk register`.
 
 ## License
 See LICENSE file.
