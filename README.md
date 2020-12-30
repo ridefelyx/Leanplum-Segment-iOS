@@ -1,3 +1,10 @@
+![Leanplum - ](Leanplum.svg)
+
+<p align="center">
+<img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
+<a href="https://cocoapods.org/pods/LeanplumSegment"><img src="https://img.shields.io/cocoapods/v/LeanplumSegment.svg?style=flat" alt="CocoaPods compatible" /></a>
+</p>
+
 # Leanplum Segment Integration for iOS
 Leanplum SDK integration for the Segment iOS SDK.
 
