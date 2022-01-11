@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Segment",
+        "repositoryURL": "https://github.com/segmentio/analytics-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "fc64997865619f73bbab196c164f7845a13da110",
+          "version": "4.1.6"
+        }
+      },
+      {
+        "package": "Leanplum",
+        "repositoryURL": "https://github.com/Leanplum/Leanplum-iOS-SDK.git",
+        "state": {
+          "branch": null,
+          "revision": "e3aed7125847ef18493655863a6b9f536039b3f4",
+          "version": "3.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
